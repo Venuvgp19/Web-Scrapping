@@ -19,7 +19,7 @@ data = {}
 for i in range(1,len(table.find("tr"))):
     data[table.find("tr")[i].find("a")[1].text] = table.find("tr")[i].find("td")[5].text
                
-my_data = {'countires' : list(data.keys()), 'Population' : list(data.values())}
+my_data = {'countries' : list(data.keys()), 'Population' : list(data.values())}
 
 df = pd.DataFrame.from_dict(my_data,orient='columns')
 
