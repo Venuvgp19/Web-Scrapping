@@ -22,5 +22,8 @@ for i in range(1,len(table.find("tr"))):
 my_data = {'countries' : list(data.keys()), 'Population' : list(data.values())}
 
 df = pd.DataFrame.from_dict(my_data,orient='columns')
+df['Population'] = df['Population'].str.replace(",","")
+df['Population'] = df['Population'].astype(int)
+df = df.sort_values(by='Population', ascending = False)
 
 print(df)
